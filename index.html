@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="circle circle-three"></div>
+    </div>
+
+    <main class="container">
+
+        <div class="converter-card">
+
+            <div class="header">
+                <div class="temperature-icon">🌡️</div>
+
+                <p class="tag">LAXMI WEB DEVELOPMENT TRACK</p>
+
+                <h1>Temperature <span>Converter</span></h1>
+
+                <p class="subtitle">
+                    Convert temperatures instantly between Celsius,
+                    Fahrenheit and Kelvin.
+                </p>
+            </div>
+
+            <div class="inputs">
+
+                <!-- Celsius -->
+                <div class="temperature-box">
+                    <div class="label">
+                        <span class="symbol celsius">°C</span>
+                        <div>
+                            <h3>Celsius</h3>
+                            <small>°C</small>
+                        </div>
+                    </div>
+
+                    <input type="number" id="celsius" placeholder="Enter temperature" step="any">
+                </div>
+
+                <!-- Fahrenheit -->
+                <div class="temperature-box">
+                    <div class="label">
+                        <span class="symbol fahrenheit">°F</span>
+                        <div>
+                            <h3>Fahrenheit</h3>
+                            <small>°F</small>
+                        </div>
+                    </div>
+
+                    <input type="number" id="fahrenheit" placeholder="Enter temperature" step="any">
+                </div>
+
+                <!-- Kelvin -->
+                <div class="temperature-box">
+                    <div class="label">
+                        <span class="symbol kelvin">K</span>
+                        <div>
+                            <h3>Kelvin</h3>
+                            <small>K</small>
+                        </div>
+                    </div>
+
+                    <input type="number" id="kelvin" placeholder="Enter temperature" step="any">
+                </div>
+
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <button id="clearBtn" class="clear-btn">
+                ↻ Clear All
+            </button>
+
+            <div class="formula">
+                <span>💡</span>
+                <p>
+                    <strong>Tip:</strong> Enter a value in any field to
+                    automatically convert it into the other units.
+                </p>
+            </div>
+
+            <footer>
+                <p>Built with HTML • CSS • JavaScript</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

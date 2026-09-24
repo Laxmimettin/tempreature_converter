@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #071426;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    background:
+        radial-gradient(circle at top left, #123b67, transparent 35%),
+        radial-gradient(circle at bottom right, #063d50, transparent 35%),
+        #071426;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.25;
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle-one {
+    width: 280px;
+    height: 280px;
+    background: #38bdf8;
+    top: -100px;
+    left: -80px;
+}
+
+.circle-two {
+    width: 220px;
+    height: 220px;
+    background: #8b5cf6;
+    right: -60px;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.circle-three {
+    width: 180px;
+    height: 180px;
+    background: #22c55e;
+    bottom: -70px;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-25px) scale(1.05);
+    }
+}
+
+/* Main */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Card */
+
+.converter-card {
+    width: 100%;
+    max-width: 850px;
+    padding: 45px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px rgba(255, 255, 255, 0.1);
+
+    animation: cardAppear 0.8s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.temperature-icon {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.tag {
+    margin-top: 20px;
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 50px);
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+h1 span {
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    max-width: 580px;
+    margin: 12px auto 0;
+    color: #aab8ca;
+    line-height: 1.6;
+}
+
+/* Input Grid */
+
+.inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.temperature-box {
+    padding: 22px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.3s ease;
+}
+
+.temperature-box:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.label h3 {
+    font-size: 16px;
+}
+
+.label small {
+    color: #8ea0b5;
+}
+
+.symbol {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.celsius {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+}
+
+.fahrenheit {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+}
+
+.kelvin {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+/* Inputs */
+
+input {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #66778c;
+}
+
+input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+/* Message */
+
+.message {
+    min-height: 25px;
+    margin-top: 18px;
+    text-align: center;
+    color: #fb7185;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Clear Button */
+
+.clear-btn {
+    display: block;
+    margin: 10px auto 25px;
+
+    padding: 12px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.clear-btn:hover {
+    background: rgba(56, 189, 248, 0.15);
+    transform: scale(1.05);
+}
+
+/* Tip */
+
+.formula {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background: rgba(56, 189, 248, 0.07);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+
+    color: #aab8ca;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.formula span {
+    font-size: 20px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+    .converter-card {
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+
+    .inputs {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .container {
+        padding: 20px 12px;
+    }
+
+    .converter-card {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+}
